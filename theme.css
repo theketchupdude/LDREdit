@@ -5,6 +5,7 @@ body{
 #toolbar button{
     border: 0px;
     background-color: darkgray;
+    display: block;
 }
 
 #toolbar button:hover{
