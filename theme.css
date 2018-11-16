@@ -2,9 +2,13 @@ body{
     margin: 0px;
 }
 
-button{
+#toolbar button{
     border: 0px;
     background-color: darkgray;
+}
+
+#toolbar button:hover{
+    background-color: lightgray;
 }
 
 canvas{
