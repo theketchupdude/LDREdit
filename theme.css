@@ -5,3 +5,10 @@ body{
 canvas{
     margin: 0px;
 }
+
+#toolbar{
+    margin: 0px;
+    height: 20px;
+    width: 100%;
+    position: absolute;
+}
