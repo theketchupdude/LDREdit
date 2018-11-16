@@ -1,64 +1,4 @@
-var scene, camera, renderer;
-
-scene = new THREE.Scene();
-scene.background = new THREE.Color(0xffffff);
-
-camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 5;
-camera.position.y = 5;
-
-var controls = new THREE.OrbitControls(camera);
-
-renderer = new THREE.WebGLRenderer({
-  antialias: true
-});
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.shadowMap.enabled = true;
-document.body.appendChild(renderer.domElement);
-
-var geometry = new THREE.BoxGeometry(1, 1, 1);
-var material = new THREE.MeshPhongMaterial({
-  color: 0xc90000,
-  side: THREE.DoubleSide
-});
-var lineMaterial = new THREE.LineBasicMaterial({
-  color: 0x000000,
-  linewidth: 2
-});
-
-var cube = new THREE.Mesh(geometry, material);
-cube.castShadow = true;
-cube.recieveShadow = true;
-//scene.add(cube);
-
-var light = new THREE.SpotLight(0xffffff, 1.0);
-light.position.set(0, 500, 0);
-light.castShadow = true;
-scene.add(light);
-
-var sky = new THREE.HemisphereLight(0xffffbb, 0x080820, 2);
-scene.add(sky);
-
-var linez = [
-	"3 16 0 0 0 1 0 0 0.9239 0 0.3827",
-  "3 16 0 0 0 0.9239 0 0.3827 0.7071 0 0.7071",
-  "3 16 0 0 0 0.7071 0 0.7071 0.3827 0 0.9239",
-  "3 16 0 0 0 0.3827 0 0.9239 0 0 1",
-  "3 16 0 0 0 0 0 1 -0.3827 0 0.9239",
-  "3 16 0 0 0 -0.3827 0 0.9239 -0.7071 0 0.7071",
-  "3 16 0 0 0 -0.7071 0 0.7071 -0.9239 0 0.3827",
-  "3 16 0 0 0 -0.9239 0 0.3827 -1 0 -0",
-  "3 16 0 0 0 -1 0 -0 -0.9239 0 -0.3827",
-  "3 16 0 0 0 -0.9239 0 -0.3827 -0.7071 0 -0.7071",
-  "3 16 0 0 0 -0.7071 0 -0.7071 -0.3827 0 -0.9239",
-  "3 16 0 0 0 -0.3827 0 -0.9239 0 0 -1",
-  "3 16 0 0 0 0 0 -1 0.3827 0 -0.9239",
-  "3 16 0 0 0 0.3827 0 -0.9239 0.7071 0 -0.7071",
-  "3 16 0 0 0 0.7071 0 -0.7071 0.9239 0 -0.3827",
-  "3 16 0 0 0 0.9239 0 -0.3827 1 0 0"
-];
-
-function renderLDR(lines) {
+function renderLDR(lines, scene) {
   var part = new THREE.Geometry();
   var endpts = new THREE.Geometry();
 
@@ -105,15 +45,3 @@ function renderLDR(lines) {
 	var geomlines = new THREE.LineSegments(endpts, lineMaterial);
 	scene.add(geomlines);
 }
-
-renderLDR(linez);
-
-function animate() {
-  requestAnimationFrame(animate);
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-  renderer.render(scene, camera);
-}
-
-animate();
-
