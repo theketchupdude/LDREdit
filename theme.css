@@ -6,6 +6,7 @@ a{
 body{
     margin: 0px;
     font-family: 'Oxygen';
+    font-size: 12pt;
 }
 
 canvas{
@@ -13,8 +14,19 @@ canvas{
 }
 
 .dropdown{
+    background-color: lightgray;
     visibility: hidden;
     display: none;
+    min-width: 5rem;
+    margin-top: 0;
+        left: 0;
+    position: absolute;
+}
+
+.dropdown li{
+    clear: both;
+    width: 100%;
+    background-color: lightgray;
 }
 
 li{
@@ -22,10 +34,12 @@ li{
     float: left;
     padding: 0.25rem;
     transition-duration: 0.5s;
+    margin: 0;
 }
 
-li:hover{
+#tools li:hover{
     background-color: lightgray;
+    cursor: pointer;
 }
 
 li:hover > ul,
@@ -40,22 +54,12 @@ li:hover > ul,
 
 #toolbar{
     color: white;
-    margin: 0px;
+    margin: 0;
     height: 2rem;
     width: 100%;
     position: absolute;
     background-color: gray;
 }
-/*
-#toolbar button{
-    border: 0px;
-    background-color: darkgray;
-    display: block;
-}
-
-#toolbar button:hover{
-    background-color: lightgray;
-}*/
 
 ul{
     list-style: none;
