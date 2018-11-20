@@ -6,12 +6,19 @@
         <title>
         LDREdit
         </title>
+        <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet"> 
         <link rel="stylesheet" href="theme.css">
     </head>
     <body>
-        <div id="toolbar">
-            <button id="file">File</button>
-        </div>
+        <nav role="navigation" id="toolbar">
+            <ul>
+                <li>File
+                    <ul class="dropdown">
+                        <li><input type="file" id="open"></input><a onclick="document.getElementById('open').click()">Open</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
         <script src="https://unpkg.com/mithril/mithril.js"></script>
         <script src="https://unpkg.com/three@0.98.0/build/three.js"></script>
         <script src="https://unpkg.com/three@0.98.0/examples/js/controls/OrbitControls.js"></script>

@@ -1,7 +1,52 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
 body{
+    margin: 0px;
+    font-family: 'Oxygen';
+}
+
+canvas{
     margin: 0px;
 }
 
+.dropdown{
+    visibility: hidden;
+    display: none;
+}
+
+li{
+    display: block;
+    float: left;
+    padding: 0.25rem;
+    transition-duration: 0.5s;
+}
+
+li:hover{
+    background-color: lightgray;
+}
+
+li:hover > ul,
+.dropdown li:hover{
+    visibility: visible;
+    display: block;
+}
+
+#open{
+    display: none;
+}
+
+#toolbar{
+    color: white;
+    margin: 0px;
+    height: 2rem;
+    width: 100%;
+    position: absolute;
+    background-color: gray;
+}
+/*
 #toolbar button{
     border: 0px;
     background-color: darkgray;
@@ -10,16 +55,10 @@ body{
 
 #toolbar button:hover{
     background-color: lightgray;
-}
+}*/
 
-canvas{
-    margin: 0px;
-}
-
-#toolbar{
-    margin: 0px;
-    height: 4%;
-    width: 100%;
-    position: absolute;
-    background-color: darkgray;
+ul{
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 }
