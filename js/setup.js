@@ -24,3 +24,10 @@ var sky = new THREE.HemisphereLight(0xffffbb, 0x080820, 2);
 scene.add(sky);
 
 camera.position.z = 5;
+
+function animate() {
+  requestAnimationFrame(animate);
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
+  renderer.render(scene, camera);
+}
