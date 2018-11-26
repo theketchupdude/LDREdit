@@ -12,8 +12,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 var geometry = new THREE.BoxGeometry(1, 1, 1);
-var material = new THREE.MeshPhongMaterial({
-  color: 0x00ff00,
+var material = new THREE.MeshNormalMaterial({
+  //color: 0x00ff00,
   side: THREE.DoubleSide
 });
 
