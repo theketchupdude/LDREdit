@@ -20,6 +20,7 @@ canvas{
     background-color: lightgray;
     visibility: hidden;
     display: none;
+    opacity: 0;
     min-width: 5rem;
     margin-top: 0;
         left: 0;
@@ -50,6 +51,7 @@ li:hover > ul,
 .dropdown li:hover{
     visibility: visible;
     display: block;
+    opacity: 1;
 }
 
 #open{
@@ -63,6 +65,7 @@ li:hover > ul,
     width: 100%;
     position: absolute;
     background-color: gray;
+    padding-bottom: 0;
 }
 
 ul{
